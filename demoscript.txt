@@ -5,9 +5,9 @@ docker run -d -p 8000:80 --name myphpcontainer myfirstphp
 
 
 docker ps -a | grep my
-docker logs <containderid>
-docker stop <containderid>
-docker rm <containderid>
+docker logs myphpcontainer
+docker stop myphpcontainer
+docker rm myphpcontainer
 
 docker images | grep my
 docker tag myfirstphp paichayon/myfirstphp
@@ -18,6 +18,6 @@ docker rmi paichayon/myfirstphp
 docker images | grep my
 
 docker pull paichayon/myfirstphp
-docker run -d -p 8000:80 --name myphpcontainer paichayon/myfirstphp
-docker exec -ti myphpcontainer /bin/sh
+docker run -d -p 8001:80 --name myphpcontainer2 paichayon/myfirstphp
+docker exec -ti myphpcontainer2 /bin/sh
 
