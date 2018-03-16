@@ -1,0 +1,23 @@
+git clone https://github.com/paichayon321/demophp.git
+cd demophp
+docker build -t myfirstphp .
+docker run -d -p 8000:80 --name myphpcontainer myfirstphp
+
+
+docker ps -a | grep my
+docker logs <containderid>
+docker stop <containderid>
+docker rm <containderid>
+
+docker images | grep my
+docker tag myfirstphp paichayon/myfirstphp
+
+docker login
+docker push paichayon/myfirstphp
+docker rmi paichayon/myfirstphp
+docker images | grep my
+
+docker pull paichayon/myfirstphp
+docker run -d -p 8000:80 --name myphpcontainer paichayon/myfirstphp
+docker exec -ti myphpcontainer /bin/sh
+
