@@ -1,0 +1,15 @@
+git clone https://github.com/dotnet/dotnet-docker-samples/
+cd dotnet-docker-samples/aspnetapp
+
+## Edit Home Index page
+vi /home/docker/dotnet-docker-samples/aspnetapp/Views/Home/Index.cshtml
+##
+<h1>Hello, world! ASP.NET on Docker</h1>
+<h2>The time on the server is @DateTime.Now</h2>
+##
+
+
+# Build and Run Docker image
+docker build -t aspnetapp .
+docker run -d -it --rm -p 8002:80 --name aspnetcore_sample aspnetapp
+
