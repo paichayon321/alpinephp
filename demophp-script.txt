@@ -1,7 +1,7 @@
-git clone https://github.com/paichayon321/demophp.git
-cd demophp
-docker build -t myfirstphp .
-docker run -d -p 8000:80 --name myphpcontainer myfirstphp
+git clone https://github.com/paichayon321/alpinephp.git
+cd alpinephp
+docker build -t myalpinephp .
+docker run -d -p 8000:80 --name myphpcontainer myalpinephp
 
 
 docker ps -a | grep my
@@ -10,14 +10,14 @@ docker stop <containderid>
 docker rm <containderid>
 
 docker images | grep my
-docker tag myfirstphp paichayon/myfirstphp
+docker tag myalpinephp paichayon/myalpinephp
 
 docker login
-docker push paichayon/myfirstphp
-docker rmi paichayon/myfirstphp
+docker push paichayon/myalpinephp
+docker rmi paichayon/myalpinephp
 docker images | grep my
 
-docker pull paichayon/myfirstphp
-docker run -d -p 8000:80 --name myphpcontainer paichayon/myfirstphp
+docker pull paichayon/myalpinephp
+docker run -d -p 8000:80 --name myphpcontainer paichayon/myalpinephp
 docker exec -ti myphpcontainer /bin/sh
 
