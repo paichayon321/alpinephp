@@ -4,6 +4,9 @@ FROM paichayon/php5-alpine:latest
 RUN apk del curl
 RUN apk add --update-cache --repository http://dl-8.alpinelinux.org/alpine/v3.7/main --allow-untrusted
 RUN apk upgrade freetype
+# ADD user to run as none-root user
+RUN adduser -D -u 1000 phpuser
+USER phpuser
 # ADD PHP file required for run web page
 #COPY .  /app
 ADD index.php /app/index.php
